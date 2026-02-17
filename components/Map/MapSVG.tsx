@@ -1,7 +1,6 @@
 import { useEffect, useContext, useRef, MutableRefObject } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import Panzoom from 'panzoom'
-import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
 import Algeria from '../countries/Algeria'
@@ -456,7 +455,6 @@ const MapSVG:React.FC<Props> = ({ setHover, panzoomReset, priorityRef, diffRef, 
           <Zambia zm={priorityRef.current.zm} ZM={diffRef.current.ZM} setCountrySelect={setCountrySelect} />
           <Zimbabwe zw={priorityRef.current.zw} ZW={diffRef.current.ZW} setCountrySelect={setCountrySelect} />
           {/* Cutoff point, all country components below are rendered on top of the previous country components*/}
-          <Abkhazia ab={priorityRef.current.ab} AB={diffRef.current.AB} setCountrySelect={setCountrySelect} />
           <AmericanSamoa as={priorityRef.current.as} AS={diffRef.current.AS} setCountrySelect={setCountrySelect} />
           <Andorra ad={priorityRef.current.ad} AD={diffRef.current.AD} setCountrySelect={setCountrySelect} />
           <Anguilla ai={priorityRef.current.ai} AI={diffRef.current.AI} setCountrySelect={setCountrySelect} />

@@ -13,7 +13,7 @@ const Privacy:React.FC<Props> = ({ setSelectorLoad }) => {
   return (
     <>
     <Head>
-			<title>Visa-map</title>
+			<title>GlobeReach - Privacy</title>
 			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
 			<link rel="shortcut icon" href="/favicon.png" />
 		</Head>

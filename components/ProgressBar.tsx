@@ -31,7 +31,7 @@ const ProgressBar:React.FC<Props> = ({ verticalColumn, width, height, color, per
         transformOrigin: 'center center',
       },
       trail: {
-        stroke: '#222222',
+        stroke: '#1A2235',
         strokeLinecap: 'butt',
         transform: 'rotate(0.25turn)',
         transformOrigin: 'center center',

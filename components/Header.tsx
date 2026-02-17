@@ -1,15 +1,15 @@
 import { useMemo, useContext } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { Stack, createTheme, ThemeProvider } from '@mui/material'
-import GithubLogo from './GithubLogo'
+import GlobeReachLogo from './GithubLogo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LanguageSelect from './LanguageSelect'
-const headerEN:string[] = ['map','table','rank','visa','blog','faq']
-const headerES:string[] = ['mapa','tabla','rango','visado','blog','faq']
-const headerPT:string[] = ['mapa','tabela','classe','visado','blog','faq']
-const headerFR:string[] = ['carte','tableau','rang','visa','blog','faq']
-const headerHR:string[] = ['karta','tablica','rang','viza','blog','faq']
+const headerEN:string[] = ['map','rank','visa','the elite','blog','faq']
+const headerES:string[] = ['mapa','rango','visado','la élite','blog','faq']
+const headerPT:string[] = ['mapa','classe','visado','a elite','blog','faq']
+const headerFR:string[] = ['carte','rang','visa','l\'élite','blog','faq']
+const headerHR:string[] = ['karta','rang','viza','elita','blog','faq']
 interface Props {
   language:string;
   setLanguage:Function;
@@ -59,55 +59,54 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           position: fixed;
           left: 0px;
           top: 0px;
-          height: 40px;
+          height: 44px;
           width: 100%;
-          background-color: #111111;
+          background: linear-gradient(135deg, #0A0F1C 0%, #131B2E 100%);
           z-index: 2;
-        }
-        .screenshot {
-          top: 13px;
-          right: 550px;
-          position: absolute;
-          color: #FFFFFF;
+          border-bottom: 1px solid rgba(0,212,170,0.15);
         }
         .map {
-          ${(pathname === '/') && 'text-decoration: underline;'}
-        }
-        .table {
-          ${(pathname.includes('/table')) && 'text-decoration: underline;'}
+          ${(pathname === '/') && 'color: #00D4AA !important; font-weight: 600;'}
         }
         .rank {
-          ${(pathname.includes('/rank')) && 'text-decoration: underline;'}
+          ${(pathname.includes('/rank')) && 'color: #00D4AA !important; font-weight: 600;'}
         }
         .visapolicy {
-          ${(pathname.includes('/visapolicy')) && 'text-decoration: underline;'}
+          ${(pathname.includes('/visapolicy')) && 'color: #00D4AA !important; font-weight: 600;'}
+        }
+        .elite {
+          ${(pathname.includes('/elite')) && 'color: #00D4AA !important; font-weight: 600;'}
         }
         .blog {
-          ${(pathname.includes('/blog')) && 'text-decoration: underline;'}
+          ${(pathname.includes('/blog')) && 'color: #00D4AA !important; font-weight: 600;'}
         }
         .faq {
-          ${(pathname.includes('/faq')) && 'text-decoration: underline;'}
+          ${(pathname.includes('/faq')) && 'color: #00D4AA !important; font-weight: 600;'}
         }
         p {
-          color: #FFFFFF;
+          color: rgba(255,255,255,0.8);
           text-decoration: none;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          transition: color 0.2s ease;
         }
         p:visited {
-          color: #FFFFFF;
+          color: rgba(255,255,255,0.8);
           text-decoration: none;
         }
         p:hover {
-          color: #FFFFFF;
-          text-decoration: underline;
+          color: #00D4AA;
+          text-decoration: none;
         }
       `}</style>
       <ThemeProvider theme={theme}>
-        <Stack direction="row" spacing={1}>
-          {dimensions.width > 800 && <GithubLogo />}
+        <Stack direction="row" spacing={1.5}>
+          {dimensions.width > 800 && <GlobeReachLogo />}
           <Link href='/'><p className={'map'}>{'/' + languageCaculation[0] + '/'}</p></Link>
-          <Link href='/table'><p className={'table'}>{'/' + languageCaculation[1] + '/'}</p></Link>
-          <Link href='/rank'><p className={'rank'}>{'/' + languageCaculation[2] + '/'}</p></Link>
-          <Link href='/visapolicy'><p className={'visapolicy'}>{'/' + languageCaculation[3] + '/'}</p></Link>
+          <Link href='/rank'><p className={'rank'}>{'/' + languageCaculation[1] + '/'}</p></Link>
+          <Link href='/visapolicy'><p className={'visapolicy'}>{'/' + languageCaculation[2] + '/'}</p></Link>
+          <Link href='/elite'><p className={'elite'}>{'/' + languageCaculation[3] + '/'}</p></Link>
           <Link href='/blog'><p className={'blog'}>{'/' + languageCaculation[4] + '/'}</p></Link>
           {dimensions.width > 800 && <Link href='/faq'><p className={'faq'}>{'/' + languageCaculation[5] + '/'}</p></Link>}
           <LanguageSelect
