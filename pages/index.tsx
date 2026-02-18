@@ -26,8 +26,8 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
 
   const title = 'GlobeReach: see how much of the world you can reach'
   const description = 'Discover your global reach. Visualize how much of the world you can access with your passport. Compare passports and compete with others.'
-  const url = 'https://www.globereach.co/'
-  const image = 'https://www.globereach.co/favicon.png'
+  const url = 'https://www.globereach.io/'
+  const image = 'https://www.globereach.io/favicon.png'
   const keywords = 'passport, travel, global reach, citizenship, immigration, passport strength, world access'
 
   const structuredData = {
@@ -35,7 +35,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     '@type': 'Organization',
     'name': 'GlobeReach',
     'url': url,
-    'logo': 'https://www.globereach.co/favicon.png',
+    'logo': 'https://www.globereach.io/favicon.png',
     'sameAs': []
   };
 
