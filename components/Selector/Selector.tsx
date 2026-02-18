@@ -26,7 +26,8 @@ interface Props {
 
 const CustomizedDrawer = styled(Drawer)`
   .MuiDrawer-paper {
-    background-color: #000000;
+    background-color: #0A0F1C;
+    border-left: 1px solid rgba(0,212,170,0.15);
   }
 `
 

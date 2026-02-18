@@ -29,24 +29,25 @@
 }
 
 .text {
-  color: rgb(255, 255, 255);
+  color: #E8ECF1;
   inline-size: 110px;
   overflow-wrap: break-word;
 }
 
 .textDiv {
-  color: rgb(255, 255, 255);
+  color: #C8CDD5;
   display: flex;
   justify-content: space-between;
   margin: 0;
+  font-size: 13px;
 }
 
 .visaPolicyText {
-  color: rgb(255, 255, 255);
+  color: #E8ECF1;
 }
 
 .mobileBackground {
-  background-color: rgb(43, 41, 41);
+  background-color: #1A2235;
 }
 
 .progressBarDesktop {
@@ -54,7 +55,7 @@
   margin-top: 10px;
   width: 492px;
   height: 20px;
-  position:relative;
+  position: relative;
   text-align: left;
   float: left;
 }
@@ -64,11 +65,12 @@
 }
 
 .rank {
-  color: rgb(255, 255, 255);
+  color: #00D4AA;
   position: relative;
   box-sizing: border-box;
   font-size: 20px;
-  font-family: proxima,sans-serif;
+  font-family: 'Inter', proxima, sans-serif;
+  font-weight: 600;
 }
 
 .textSeparator {
@@ -82,9 +84,9 @@
 }
 
 .inputText {
-  color: white;
+  color: #E8ECF1;
 }
 .inputText:hover {
   cursor: pointer;
-  background-color: rgb(100,100,100);
+  background-color: #1E2840;
 }

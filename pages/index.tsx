@@ -24,22 +24,19 @@ interface Props {
 
 export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, panzoomReset, visaDurationRef, legend, setLegend, diffRef, setCountrySelect }:Props) {
 
-  const title = 'Visa-map: visualize the strength of your passport'
-  const description = 'Easily visualize travel requirements for passports and visas. Get up-to-date information on document needs for various countries.'
-  const url = 'https://www.visamap.co/'
-  const image = 'https://www.visamap.co/favicon.png'
-  const keywords = 'visa, passport, travel, citizenship, immigration'
+  const title = 'GlobeReach: see how much of the world you can reach'
+  const description = 'Discover your global reach. Visualize how much of the world you can access with your passport. Compare passports and compete with others.'
+  const url = 'https://www.globereach.io/'
+  const image = 'https://www.globereach.io/favicon.png'
+  const keywords = 'passport, travel, global reach, citizenship, immigration, passport strength, world access'
 
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'Visamap.co',
+    'name': 'GlobeReach',
     'url': url,
-    'logo': 'https://www.visamap.co/favicon.png',
-    'sameAs': [
-      'https://www.github.com/ChengCPU/visa-map',
-      'https://www.chengl.ee'
-    ]
+    'logo': 'https://www.globereach.io/favicon.png',
+    'sameAs': []
   };
 
   useEffect(() => {
@@ -52,7 +49,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
     <Script id='meta' type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}></Script>
     <Head>
-      <title>Visa-map</title>
+      <title>GlobeReach</title>
       <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta property="og:title" content={title} />

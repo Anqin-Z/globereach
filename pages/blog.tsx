@@ -14,7 +14,7 @@ const Blog:React.FC<Props> = ({ setSelectorLoad }) => {
   return (
     <>
     <Head>
-			<title>{'Visa-map'}</title>
+			<title>{'GlobeReach - Blog'}</title>
 			<meta name='viewport' content='width=device-width, user-scalable=no'></meta>
 			<link rel='shortcut icon' href='/favicon.png' />
 		</Head>
@@ -23,13 +23,18 @@ const Blog:React.FC<Props> = ({ setSelectorLoad }) => {
         .container {
           display: flex;
           flex-direction: column;
-          margin-top: 60px;
+          margin-top: 70px;
           align-items: center;
-          color: #FFFFFF;
-          margin-right: 38px;
+          color: #E8ECF1;
+          padding: 0 20px;
         }
         h2 {
           margin: 0px;
+          color: #00D4AA;
+          transition: color 0.2s ease;
+        }
+        h2:hover {
+          color: #00F0C0;
         }
         .article {
           width: 200px;
@@ -42,10 +47,12 @@ const Blog:React.FC<Props> = ({ setSelectorLoad }) => {
         .date {
           font-weight: bold;
           font-size: .75rem;
+          color: rgba(255,255,255,0.5);
         }
         .article-list {
           white-space: normal;
           list-style: none;
+          max-width: 700px;
         }
       `}</style>
       <ul className='article-list'>

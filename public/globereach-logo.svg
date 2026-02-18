@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="20" fill="url(#globeGrad)" opacity="0.9"/>
+  <ellipse cx="24" cy="24" rx="10" ry="20" fill="none" stroke="white" stroke-width="1.2" opacity="0.6"/>
+  <ellipse cx="24" cy="24" rx="16" ry="20" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="4" y1="24" x2="44" y2="24" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="24" y1="4" x2="24" y2="44" stroke="white" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="24" cy="14" rx="17" ry="0" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <path d="M7 18 Q24 15 41 18" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+  <path d="M7 30 Q24 33 41 30" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+</svg>

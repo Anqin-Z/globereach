@@ -18,7 +18,7 @@ export default function Custom404() {
 	return (
 		<>
 		<Head>
-			<title>Visa-map</title>
+			<title>GlobeReach - 404</title>
 			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
 			<link rel="shortcut icon" href="/favicon.png" />
 		</Head>

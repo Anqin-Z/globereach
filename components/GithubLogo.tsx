@@ -1,19 +1,35 @@
 import Image from 'next/image'
-import logo from '../public/github-mark-white.svg'
+import Link from 'next/link'
+import logo from '../public/globereach-logo.svg'
 
-const GithubLogo:React.FC = () => {
+const GlobeReachLogo:React.FC = () => {
   return (
     <div className={'container'}>
       <style jsx>{`
         .container {
-          top:4px;
+          top:3px;
           left:20px;
           position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+        }
+        .brand {
+          color: #00D4AA;
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-decoration: none;
+          white-space: nowrap;
         }
       `}</style>
-      <a href='https://github.com/ChengCPU/visa-map' target='_blank' rel="noreferrer"><Image height={38} width={40} src={logo} alt={'Github'}/></a>
+      <Link href='/' style={{display:'flex',alignItems:'center',gap:'8px',textDecoration:'none'}}>
+        <Image height={34} width={34} src={logo} alt={'GlobeReach'}/>
+        <span className={'brand'}>GlobeReach</span>
+      </Link>
     </div>
   )
 }
 
-export default GithubLogo
+export default GlobeReachLogo
