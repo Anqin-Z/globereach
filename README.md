@@ -12,7 +12,7 @@
 
 # Website
 
-https://visamap.io
+https://globereach.io
 
 # Contribute
 
