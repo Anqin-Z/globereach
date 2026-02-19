@@ -5,11 +5,11 @@ import GlobeReachLogo from './GithubLogo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LanguageSelect from './LanguageSelect'
-const headerEN:string[] = ['map','rank','visa','the elite','blog','faq']
-const headerES:string[] = ['mapa','rango','visado','la élite','blog','faq']
-const headerPT:string[] = ['mapa','classe','visado','a elite','blog','faq']
-const headerFR:string[] = ['carte','rang','visa','l\'élite','blog','faq']
-const headerHR:string[] = ['karta','rang','viza','elita','blog','faq']
+const headerEN:string[] = ['Map','Rank','The Elite','Blog','FAQ']
+const headerES:string[] = ['Mapa','Rango','La Élite','Blog','FAQ']
+const headerPT:string[] = ['Mapa','Classe','A Elite','Blog','FAQ']
+const headerFR:string[] = ['Carte','Rang','L\'Élite','Blog','FAQ']
+const headerHR:string[] = ['Karta','Rang','Elita','Blog','FAQ']
 interface Props {
   language:string;
   setLanguage:Function;
@@ -65,50 +65,41 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           z-index: 2;
           border-bottom: 1px solid rgba(0,212,170,0.15);
         }
-        .map {
-          ${(pathname === '/') && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        .rank {
-          ${(pathname.includes('/rank')) && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        .visapolicy {
-          ${(pathname.includes('/visapolicy')) && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        .elite {
-          ${(pathname.includes('/elite')) && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        .blog {
-          ${(pathname.includes('/blog')) && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        .faq {
-          ${(pathname.includes('/faq')) && 'color: #00D4AA !important; font-weight: 600;'}
-        }
-        p {
+        .header-btn {
+          display: inline-block;
+          padding: 6px 16px;
+          border-radius: 6px;
+          border: 1px solid rgba(255,255,255,0.15);
+          background: rgba(255,255,255,0.05);
           color: rgba(255,255,255,0.8);
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.3px;
           text-decoration: none;
-          font-size: 14px;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-          transition: color 0.2s ease;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          white-space: nowrap;
         }
-        p:visited {
-          color: rgba(255,255,255,0.8);
-          text-decoration: none;
-        }
-        p:hover {
+        .header-btn:hover {
+          background: rgba(0,212,170,0.1);
+          border-color: rgba(0,212,170,0.4);
           color: #00D4AA;
-          text-decoration: none;
+        }
+        .header-btn.active {
+          background: rgba(0,212,170,0.15);
+          border-color: #00D4AA;
+          color: #00D4AA;
+          font-weight: 600;
         }
       `}</style>
       <ThemeProvider theme={theme}>
         <Stack direction="row" spacing={1.5}>
           {dimensions.width > 800 && <GlobeReachLogo />}
-          <Link href='/'><p className={'map'}>{'/' + languageCaculation[0] + '/'}</p></Link>
-          <Link href='/rank'><p className={'rank'}>{'/' + languageCaculation[1] + '/'}</p></Link>
-          <Link href='/visapolicy'><p className={'visapolicy'}>{'/' + languageCaculation[2] + '/'}</p></Link>
-          <Link href='/elite'><p className={'elite'}>{'/' + languageCaculation[3] + '/'}</p></Link>
-          <Link href='/blog'><p className={'blog'}>{'/' + languageCaculation[4] + '/'}</p></Link>
-          {dimensions.width > 800 && <Link href='/faq'><p className={'faq'}>{'/' + languageCaculation[5] + '/'}</p></Link>}
+          <Link href='/'><span className={`header-btn${pathname === '/' ? ' active' : ''}`}>{languageCaculation[0]}</span></Link>
+          <Link href='/rank'><span className={`header-btn${pathname.includes('/rank') ? ' active' : ''}`}>{languageCaculation[1]}</span></Link>
+          <Link href='/elite'><span className={`header-btn${pathname.includes('/elite') ? ' active' : ''}`}>{languageCaculation[2]}</span></Link>
+          <Link href='/blog'><span className={`header-btn${pathname.includes('/blog') ? ' active' : ''}`}>{languageCaculation[3]}</span></Link>
+          {dimensions.width > 800 && <Link href='/faq'><span className={`header-btn${pathname.includes('/faq') ? ' active' : ''}`}>{languageCaculation[4]}</span></Link>}
           <LanguageSelect
             language={language}
             setLanguage={setLanguage}
