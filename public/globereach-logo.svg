@@ -1,16 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0088CC;stop-opacity:1" />
-    </linearGradient>
+    <clipPath id="globeClip">
+      <circle cx="128" cy="128" r="124"/>
+    </clipPath>
+    <radialGradient id="oceanGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1a3a5c"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </radialGradient>
+    <radialGradient id="sheen" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
   </defs>
-  <circle cx="24" cy="24" r="20" fill="url(#globeGrad)" opacity="0.9"/>
-  <ellipse cx="24" cy="24" rx="10" ry="20" fill="none" stroke="white" stroke-width="1.2" opacity="0.6"/>
-  <ellipse cx="24" cy="24" rx="16" ry="20" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
-  <line x1="4" y1="24" x2="44" y2="24" stroke="white" stroke-width="1" opacity="0.5"/>
-  <line x1="24" y1="4" x2="24" y2="44" stroke="white" stroke-width="1" opacity="0.5"/>
-  <ellipse cx="24" cy="14" rx="17" ry="0" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
-  <path d="M7 18 Q24 15 41 18" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
-  <path d="M7 30 Q24 33 41 30" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+  <!-- Ocean background -->
+  <circle cx="128" cy="128" r="124" fill="url(#oceanGrad)"/>
+  <g clip-path="url(#globeClip)">
+    <!-- North America -->
+    <path d="M58 42 L62 38 L72 36 L80 32 L88 30 L96 32 L100 36 L104 34 L110 32 L116 34 L118 40 L120 46 L118 52 L114 58 L110 64 L108 72 L112 78 L116 84 L118 90 L116 96 L110 100 L104 102 L98 98 L92 94 L86 92 L80 90 L74 86 L70 80 L66 74 L62 68 L58 62 L54 56 L52 50 L54 44 Z" fill="#00D4AA" opacity="0.85"/>
+    <!-- Greenland -->
+    <path d="M102 18 L112 16 L120 18 L126 22 L128 28 L124 34 L118 32 L112 30 L106 28 L102 24 Z" fill="#00D4AA" opacity="0.8"/>
+    <!-- Central America -->
+    <path d="M72 96 L78 94 L82 98 L80 104 L76 110 L72 116 L68 118 L64 114 L66 108 L68 102 Z" fill="#00D4AA" opacity="0.85"/>
+    <!-- South America -->
+    <path d="M80 124 L88 120 L96 118 L104 122 L108 130 L110 140 L108 150 L106 160 L104 170 L100 180 L96 188 L90 194 L84 198 L80 196 L76 190 L74 180 L72 170 L70 160 L72 150 L76 140 L78 132 Z" fill="#00D4AA" opacity="0.85"/>
+    <!-- Europe -->
+    <path d="M136 38 L142 34 L150 32 L156 34 L160 38 L162 44 L158 50 L154 56 L150 60 L146 62 L140 60 L136 56 L132 50 L134 44 Z" fill="#00D4AA" opacity="0.8"/>
+    <!-- Africa -->
+    <path d="M138 72 L146 68 L154 66 L162 68 L168 74 L172 82 L174 92 L176 102 L176 112 L174 122 L172 132 L168 142 L164 150 L158 156 L152 160 L146 158 L140 152 L136 144 L134 134 L132 124 L130 114 L130 104 L132 94 L134 84 Z" fill="#00D4AA" opacity="0.85"/>
+    <!-- Asia / Middle East hint -->
+    <path d="M168 36 L176 32 L186 30 L196 32 L204 36 L210 42 L214 50 L216 58 L214 66 L210 74 L204 80 L198 84 L192 86 L186 84 L180 78 L176 70 L172 62 L170 54 L168 46 Z" fill="#00D4AA" opacity="0.75"/>
+    <!-- Australia hint (far right edge) -->
+    <path d="M200 130 L210 126 L220 128 L226 134 L228 142 L224 150 L218 154 L210 152 L204 148 L200 140 Z" fill="#00D4AA" opacity="0.7"/>
+    <!-- Grid lines - longitude -->
+    <ellipse cx="128" cy="128" rx="40" ry="124" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+    <ellipse cx="128" cy="128" rx="80" ry="124" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+    <ellipse cx="128" cy="128" rx="124" ry="124" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+    <!-- Grid lines - latitude -->
+    <line x1="4" y1="128" x2="252" y2="128" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <path d="M20 80 Q128 65 236 80" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+    <path d="M20 176 Q128 191 236 176" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+    <!-- Subtle sheen overlay -->
+    <circle cx="128" cy="128" r="124" fill="url(#sheen)"/>
+  </g>
+  <!-- Rim -->
+  <circle cx="128" cy="128" r="124" fill="none" stroke="rgba(0,212,170,0.2)" stroke-width="1.5"/>
 </svg>
