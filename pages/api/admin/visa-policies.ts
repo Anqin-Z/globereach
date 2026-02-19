@@ -10,6 +10,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // GET: read visa policies (filtered by passport, optionally destination)
   if (req.method === 'GET') {
     const { passport, destination } = req.query
+
+    // Special case: return distinct passport list efficiently
+    if (passport === '__list__') {
+      const { data, error } = await supabase
+        .from('visa_policies')
+        .select('passport')
+        .order('passport', { ascending: true })
+        .limit(100000)
+      if (error) return res.status(500).json({ error: error.message })
+      const unique = [...new Set((data || []).map((r: { passport: string }) => r.passport))]
+      return res.status(200).json({ passports: unique })
+    }
+
     let query = supabase.from('visa_policies').select('*')
 
     if (passport) query = query.eq('passport', passport as string)

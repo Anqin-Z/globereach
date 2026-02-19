@@ -81,14 +81,10 @@ export default function Admin() {
   useEffect(() => {
     if (!authed) return
     fetch('/api/admin/visa-policies?passport=__list__')
-      .then(() =>
-        fetch('/api/admin/visa-policies')
-          .then(r => r.json())
-          .then((rows: VisaEntry[]) => {
-            const unique = [...new Set(rows.map(r => r.passport))].sort()
-            setPassportList(unique)
-          })
-      )
+      .then(r => r.json())
+      .then((data: { passports: string[] }) => {
+        setPassportList(data.passports || [])
+      })
       .catch(() => {})
   }, [authed])
 
